@@ -1,0 +1,51 @@
+.btn {
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid transparent;
+    webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @include transition(all 0.3s);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 45px;
+    &.btnRed {
+        background-color: #b01f30;
+        color: #fff;
+        &:hover {
+            background-color: $colorHover;
+        }
+    }
+    &.btnWhite {
+        background-color: #ffff;
+        color: #b01f30;
+        &:hover {
+            background-color: $colorHover;
+            color: #fff;
+        }
+    }
+}
+
+.modal__close {
+    position: absolute;
+    width: 27px;
+    display: block;
+    right: 11px;
+    top: 11px;
+    height: 27px;
+    span {
+        display: block;
+        background-color: #fff;
+        width: 100%;
+        height: 3px;
+        position: relative;
+        @include transform(rotate(-45deg));
+        & + span {
+            top: -3px;
+            @include transform(rotate(45deg));
+        }
+    }
+}

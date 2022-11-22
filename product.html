@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width,user-scalable=no'>
+    <title>О товаре</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css" />
+    <link rel='stylesheet' type='text/css' href='css/slick.css'>
+    <link rel='stylesheet' type='text/css' href='css/micromodal.css'>
+    <link rel='stylesheet' type='text/css' href='css/fancybox.css'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+
+</head>
+
+<body>
+    <div class="pageWrapper">
+        <header class="header">
+            <div class="logoWrapper">
+                <a href="#"></a>
+                <img class="logo" src="img/logo.svg" alt="logo">
+            </div>
+            <div class="headerContent">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="#">Продукция</a></li>
+                        <li><a href="#">Преимущества</a></li>
+                        <li><a href="#">Производство</a></li>
+                        <li><a href="#" data-custom-open="modalCall">Сотрудничество</a></li>
+                        <li><a href="#">Купить</a></li>
+                    </ul>
+                </nav>
+                <div class="infoCompany">
+                    <a href="tel:+74959335959" class="linkPhone">+7(495)933-59-59</a>
+                    <span class="address">119019, г. Москва, ул. Знаменка, дом 13, строение 1, подвал, помещение V ,
+                        ком. 6б</span>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            Овощи с индейкой и базиликом
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footerTop">
+                    <div class="infoCompany">
+                        <a href="tel:+74959335959" class="linkPhone">+7(495)933-59-59</a>
+                        <span class="address">119019, г. Москва, ул. Знаменка, дом 13, строение 1, подвал, помещение V ,
+                            ком. 6б</span>
+                    </div>
+                    <a href="#" class="linkMail">Написать нам</a>
+                </div>
+                <div class="footerBot">
+                    <ul class="text">
+                        <li><a href="#">Политика конфиденциальности интернет-сайта </a></li>
+                        <li><a href="#">Политика в отношении обработки персональных данных</a></li>
+                    </ul>
+                    <a href="#" class="btn btnWhite">Наверх</a>
+                </div>
+            </div>
+        </footer>
+        <div class="micromodal-slide modal" id="modalCall" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modalCall-title">
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close="">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="modal__content" id="modalCall-content">
+                        <form class="modalBlock">
+                            <h2 class="cap">Оставьте свои контакты, и наш <br>менеджер с Вами свяжется</h2>
+                            <div class="modalBlockContent">
+                                <div class="inputList">
+                                    <div class="inputWrapper">
+                                        <label for="">Имя</label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="inputWrapper">
+                                        <label for="">Ваше предложение</label>
+                                        <textarea placeholder="Текст сообщения"></textarea>
+                                    </div>
+                                    <div class="inputWrapper">
+                                        <label for="">Телефон</label>
+                                        <input type="text" id="phoneInput">
+                                    </div>
+                                    <div class="inputWrapper">
+                                        <label for="">E-mail</label>
+                                        <input type="email" id="emailInput">
+                                    </div>
+                                    <div class="inputWrapper">
+                                        <label for="">Ваша организация</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="checkBlock">
+                                    <input type="checkbox" id="personal">
+                                    <label for="personal">Согласен <a href="#">с политикой
+                                            конфиденциальности</a></label>
+                                </div>
+                                <div class="controls">
+                                    <button type="submit" class="btn btnRed">Оставить заявку</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type='text/javascript' src='js/jquery-3.6.0.min.js'></script>
+<script type='text/javascript' src='js/slick.min.js'></script>
+<script type='text/javascript' src='js/micromodal.min.js'></script>
+<script type='text/javascript' src='js/fancybox.umd.js'></script>
+<script type='text/javascript' src='js/jquery.inputmask.min.js'></script>
+<script type='text/javascript' src='js/script.js'></script>
+
+</html>
