@@ -200,6 +200,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -1058,6 +1062,114 @@ button {
   width: 100%;
   max-width: 259px;
   padding: 7px 0;
+}
+
+.productSection {
+  background-color: #fff;
+  width: 100%;
+  padding: 125px 0 100px;
+}
+.productSection .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.productSection .row .leftSide {
+  width: 351px;
+  display: flex;
+  align-items: center;
+  padding-top: 135px;
+  justify-content: flex-start;
+}
+.productSection .row .rightSide {
+  width: calc(100% - 351px);
+  padding-left: 129px;
+}
+.productSection .productInfo {
+  font-size: 20px;
+  line-height: 24px;
+  color: #150801;
+}
+.productSection .productInfo p + p {
+  margin-top: 27px;
+}
+.productSection .productInfo b {
+  font-weight: 600;
+}
+.productSection .productInfo strong {
+  color: #9d0b20;
+}
+.productSection .productInfo .name {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  color: #150801;
+  display: block;
+  margin-bottom: 60px;
+}
+.productSection .tableRatio {
+  margin-top: 45px;
+}
+.productSection .tableVitamins {
+  margin-top: 25px;
+}
+.productSection .btn {
+  margin-top: 91px;
+  padding: 15px 32px;
+}
+
+.tableRatio {
+  width: 100%;
+  border: solid 1px #000;
+  border-collapse: collapse;
+}
+.tableRatio td {
+  border: solid 1px #000;
+  padding: 8px 10px 8px 24px;
+}
+.tableRatio td:nth-child(2) {
+  text-align: center;
+}
+
+.tableVitamins {
+  width: calc(100% + 16px);
+  border-collapse: separate;
+  border-spacing: 8px 8px;
+  margin: 0 -8px;
+}
+.tableVitamins tr:first-child td {
+  font-weight: 500;
+}
+.tableVitamins td {
+  padding: 0px 9px;
+  background-color: #e9d6bc;
+}
+.tableVitamins td:nth-child(3), .tableVitamins td:nth-child(2) {
+  text-align: center;
+}
+
+.footNote {
+  position: relative;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 26px;
+  color: #000000;
+}
+.footNote:before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  content: "*";
+  left: -15px;
+  top: -6px;
+  font-weight: 700;
+}
+.footNote span {
+  display: block;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

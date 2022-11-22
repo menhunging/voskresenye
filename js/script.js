@@ -32,6 +32,16 @@ $(document).ready(function () {
         });
     }
 
+    if ($('.btnTop').length > 0) {
+        $(".btnTop").click(function (event) {
+            event.preventDefault();
+            $("html, body").animate({ scrollTop: 0 });
+            return false;
+        });
+    }
+
+
+
 
 
 

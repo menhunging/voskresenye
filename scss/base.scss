@@ -6,6 +6,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     $trans: all 0.3s;
     @include transition($trans);
@@ -104,9 +108,9 @@ button {
         line-height: 30px;
         color: #fff;
         outline: none;
-        @include transition(border .3s);
-        &.notempty{
-            border:0;
+        @include transition(border 0.3s);
+        &.notempty {
+            border: 0;
         }
     }
     textarea {
@@ -193,10 +197,10 @@ button {
             margin-top: 45px;
         }
     }
-    .controls{
+    .controls {
         text-align: center;
         margin-top: 45px;
-        .btn{
+        .btn {
             width: 100%;
             max-width: 265px;
         }
@@ -249,6 +253,23 @@ button {
         }
     }
 }
+
+// .table {
+//     display: table;
+//     width: 100%;
+//     .thead,
+//     .tbody {
+//         display: table-row-group;
+//     }
+//     .tr {
+//         display: table-row;
+//     }
+//     .td,
+//     .th {
+//         display: table-cell;
+//         vertical-align: middle;
+//     }
+// }
 
 .slick-dots {
     display: flex;
