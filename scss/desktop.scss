@@ -34,8 +34,9 @@
     ul {
         display: flex;
         justify-content: center;
-        gap: 11px;
+        margin: 0 -5px;
         li {
+            margin: 0 5px;
             a {
                 font-weight: 700;
                 font-size: 24px;
@@ -102,10 +103,10 @@
 .catalogList {
     display: flex;
     flex-wrap: wrap;
-    gap: 54px 29px;
-    margin-top: 77px;
+    margin: 50px -15px -27px;
     .product {
-        width: calc(100% / 3 - 20px);
+        width: calc(100% / 3 - 30px);
+        margin: 27px 15px;
     }
     & + * {
         margin-top: 66px;
@@ -153,12 +154,12 @@
 }
 
 .advList {
-    margin-top: 52px;
-    gap: 30px;
+    margin: 33px -15px -15px;
     display: flex;
     flex-wrap: wrap;
     .advItem {
-        width: calc(100% / 3 - 20px);
+        width: calc(100% / 3 - 30px);
+        margin: 15px;
     }
     .picture {
         width: 100%;
@@ -342,11 +343,12 @@
     .list {
         display: flex;
         flex-wrap: wrap;
-        gap: 60px 0;
+        margin: -30px 0;
     }
     .item {
         width: calc(100% / 4);
         text-align: center;
+        margin: 30px 0;
     }
     .picture {
         width: 100%;

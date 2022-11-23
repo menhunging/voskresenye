@@ -659,7 +659,10 @@ button {
 .menu ul {
   display: flex;
   justify-content: center;
-  gap: 11px;
+  margin: 0 -5px;
+}
+.menu ul li {
+  margin: 0 5px;
 }
 .menu ul li a {
   font-weight: 700;
@@ -722,11 +725,11 @@ button {
 .catalogList {
   display: flex;
   flex-wrap: wrap;
-  gap: 54px 29px;
-  margin-top: 77px;
+  margin: 50px -15px -27px;
 }
 .catalogList .product {
-  width: calc(33.3333333333% - 20px);
+  width: calc(33.3333333333% - 30px);
+  margin: 27px 15px;
 }
 .catalogList + * {
   margin-top: 66px;
@@ -773,13 +776,13 @@ button {
 }
 
 .advList {
-  margin-top: 52px;
-  gap: 30px;
+  margin: 33px -15px -15px;
   display: flex;
   flex-wrap: wrap;
 }
 .advList .advItem {
-  width: calc(33.3333333333% - 20px);
+  width: calc(33.3333333333% - 30px);
+  margin: 15px;
 }
 .advList .picture {
   width: 100%;
@@ -949,11 +952,12 @@ button {
 .peopleSection .list {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px 0;
+  margin: -30px 0;
 }
 .peopleSection .item {
   width: 25%;
   text-align: center;
+  margin: 30px 0;
 }
 .peopleSection .picture {
   width: 100%;
