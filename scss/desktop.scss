@@ -7,6 +7,14 @@
         flex-wrap: wrap;
         flex-direction: column;
         padding: 50px 45px;
+        .logoWrapper {
+            display: none;
+        }
+        .coop {
+            display: none;
+        }
+        .buy {
+        }
     }
     .logoWrapper {
         position: absolute;
@@ -16,6 +24,9 @@
     .menu {
         order: 2;
         margin-top: 80px;
+        .coop {
+            display: block;
+        }
     }
     .infoCompany {
         order: 1;
@@ -197,6 +208,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     filter: drop-shadow(0px 7px 7px rgba(0, 0, 0, 0.4));
+    .pictureMobile {
+        background-image: url("../img/back-food.jpg");
+        width: 100%;
+        background-position: 34% center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: drop-shadow(0px 7px 7px rgba(0, 0, 0, 0.4));
+    }
 }
 
 .foodBlockWrapper {
@@ -336,6 +355,12 @@
         text-align: center;
         color: #fff;
     }
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
 }
 
 .peopleSection {
@@ -385,11 +410,11 @@
     }
     .list {
         display: flex;
-        gap: 16px;
-        margin-top: 157px;
+        margin: 157px -7.5px 0;
     }
     .item {
         @include invisLink;
+        margin: 0 7.5px;
         img {
         }
     }
@@ -470,6 +495,10 @@
             padding-left: 129px;
         }
     }
+    .title{
+        display: none;
+    }
+    .title,
     .productInfo {
         font-size: 20px;
         line-height: 24px;
@@ -494,7 +523,6 @@
             margin-bottom: 60px;
         }
     }
-
     .tableRatio {
         margin-top: 45px;
     }
@@ -559,4 +587,16 @@
         display: block;
         font-weight: 700;
     }
+}
+
+.linkPhoneMob {
+    display: none;
+    background-image: url("../img/phone-dark.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 27px;
+    height: 28px;
+    position: absolute;
+    right: 16px;
+    top: 15px;
 }

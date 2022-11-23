@@ -40,36 +40,90 @@ $(document).ready(function () {
         });
     }
 
+    if ($('.production').length > 0) {
 
+        let slider = $('.production .list')
 
+        slider.slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 5000,
+                    settings: "unslick"
+                },
+                {
+                    breakpoint: 992,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            ]
+            // prevArrow: "<button class='slide-arrow slick-prev'><span class='slide-text'>пред</span></button>",
+            // nextArrow: "<button class='slide-arrow slick-next'><span class='slide-text'>след</span></button>"
+        })
 
+    }
 
+    if ($('.catalogList').length > 0) {
 
-    if ($(".menuBurger").length) {
-        $(".menuBurger").on("click", function () {
-            $(".menuBurger").toggleClass("open")
-            $(".menu").toggleClass("open")
+        let slider = $('.catalogList')
+
+        slider.slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 5000,
+                    settings: "unslick"
+                },
+                {
+                    breakpoint: 768,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            ]
+        })
+
+    }
+
+    if ($(".btnBurger").length) {
+        $(".btnBurger").on("click", function () {
+            $(".btnBurger").toggleClass("open")
+            $(".header .headerContent").toggleClass("open")
         })
     }
+
+
+
+
+
 
     if ($('.linkFancyBox').length > 0) {
         Fancybox.bind("[data-fancybox]", {
         });
     }
 
-    if ($('.sliderMedia').length > 0) {
 
-        let slider = $('.sliderMedia')
-
-        slider.slick({
-            infinite: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: false,
-            arrow: true,
-            prevArrow: "<button class='slide-arrow slick-prev'><span class='slide-text'>пред</span></button>",
-            nextArrow: "<button class='slide-arrow slick-next'><span class='slide-text'>след</span></button>"
-        });
-
-    }
 })
+
+
+
+$(window).resize(function () {
+    if ($(window).width() < 992) {
+        if ($('.production').length > 0) {
+            $('.production .list').slick('refresh');
+        }
+    }
+
+    if ($(window).width() < 768) {
+        if ($('.catalogList').length > 0) {
+            $('.catalogList').slick('refresh');
+        }
+    }
+});

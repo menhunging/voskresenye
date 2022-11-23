@@ -49,3 +49,53 @@
         }
     }
 }
+
+.btnBurger {
+    display: none;
+    position: absolute;
+    left: 14px;
+    top: 13px;
+    width: 30px;
+    height: 30px;
+    @include transition(all 0.3s);
+    z-index: 9;
+    &.open {
+        .line {
+            &:nth-child(1) {
+                @include transform(rotate(-45deg));
+                top: 10px;
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                @include transform(rotate(45deg));
+                top: -10px;
+            }
+        }
+    }
+    .line {
+        position: relative;
+        @include transition(all 0.3s);
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: #332f2e;
+        & + .line {
+            margin-top: 6px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .btn {
+        font-size: 18px;
+        line-height: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn {
+        font-size: 14px;
+    }
+}
