@@ -58,6 +58,7 @@ $(document).ready(function () {
             slidesToScroll: 1,
             dots: true,
             arrows: false,
+            adaptiveHeight: true,
             responsive: [
                 {
                     breakpoint: 5000,
@@ -138,6 +139,11 @@ $(document).ready(function () {
             $('.dialogsSection').toggleClass('open')
             $('body').toggleClass('hidden')
         })
+    }
+
+    if ($('.wow').length > 0) {
+        var wow = new WOW();
+        wow.init();
     }
 
 })

@@ -300,30 +300,42 @@
         }
         &:nth-child(1) {
             img {
-                margin-left: 340px;
-                margin-top: -207px;
+                margin-left: 372px;
+                margin-top: -158px;
             }
         }
         &:nth-child(2) {
             img {
-                margin-top: -314px;
-                margin-left: 10px;
+                margin-top: -273px;
+                transform: rotate(12.6deg);
+                margin-left: 37px;
+                width: 404px;
+                height: 230px;
             }
         }
         &:nth-child(3) {
             img {
-                margin-top: -236px;
-                margin-left: 22px;
+                margin-top: -189px;
+                margin-left: 54px;
+                width: 410px;
+                height: 252px;
+                transform: rotate(13.82deg);
             }
         }
         &:nth-child(4) {
             img {
-                margin-top: 38px;
-                margin-left: 47px;
+                margin-top: 42px;
+                margin-left: 56px;
+                width: 406px;
+                height: 251px;
+                transform: rotate(0.94deg);
             }
         }
 
         &:nth-child(5) {
+            img {
+                display: none;
+            }
         }
     }
     .cap {
@@ -340,6 +352,11 @@
         position: absolute;
         top: 0;
         left: 100%;
+        width: 390px;
+        height: 246px;
+        border: solid 8px #fff;
+        transform: rotate(14.93deg);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
 }
 
@@ -689,5 +706,41 @@
     }
     & + .checkBlock {
         margin-top: 25px !important;
+    }
+}
+
+.breadСrumbs {
+    width: 100%;
+    margin: 0 -10px 30px;
+    li {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0 10px;
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+        @include before {
+            left: -15px;
+            top: 50%;
+            width: 5px;
+            height: 5px;
+            margin-top: -2px;
+            @include border-radius(50%);
+            background-color: #b01f30;
+        }
+        a {
+            font-size: 14px;
+            line-height: 18px;
+            text-decoration: underline;
+            @include transition(all 0.3s);
+            &:hover {
+                text-decoration-color: transparent;
+            }
+        }
     }
 }

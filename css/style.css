@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *:before,
 *:after {
@@ -947,20 +948,32 @@ button {
   margin-top: -29px;
 }
 .production .item:nth-child(1) img {
-  margin-left: 340px;
-  margin-top: -207px;
+  margin-left: 372px;
+  margin-top: -158px;
 }
 .production .item:nth-child(2) img {
-  margin-top: -314px;
-  margin-left: 10px;
+  margin-top: -273px;
+  transform: rotate(12.6deg);
+  margin-left: 37px;
+  width: 404px;
+  height: 230px;
 }
 .production .item:nth-child(3) img {
-  margin-top: -236px;
-  margin-left: 22px;
+  margin-top: -189px;
+  margin-left: 54px;
+  width: 410px;
+  height: 252px;
+  transform: rotate(13.82deg);
 }
 .production .item:nth-child(4) img {
-  margin-top: 38px;
-  margin-left: 47px;
+  margin-top: 42px;
+  margin-left: 56px;
+  width: 406px;
+  height: 251px;
+  transform: rotate(0.94deg);
+}
+.production .item:nth-child(5) img {
+  display: none;
 }
 .production .cap {
   font-weight: 700;
@@ -976,6 +989,11 @@ button {
   position: absolute;
   top: 0;
   left: 100%;
+  width: 390px;
+  height: 246px;
+  border: solid 8px #fff;
+  transform: rotate(14.93deg);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .actionSection {
@@ -1345,6 +1363,53 @@ button {
   margin-top: 25px !important;
 }
 
+.breadСrumbs {
+  width: 100%;
+  margin: 0 -10px 30px;
+}
+.breadСrumbs li {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 10px;
+}
+.breadСrumbs li:first-child::before {
+  display: none;
+}
+.breadСrumbs li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  left: -15px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #b01f30;
+}
+.breadСrumbs li a {
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.breadСrumbs li a:hover {
+  text-decoration-color: transparent;
+}
+
 @media (max-width: 1799px) {
   .header .logoWrapper {
     width: 450px;
@@ -1456,15 +1521,15 @@ button {
   }
   .production .item:nth-child(2) img {
     margin-top: -234px;
-    margin-left: -20px;
+    margin-left: 20px;
   }
   .production .item:nth-child(3) img {
-    margin-top: -112px;
-    margin-left: -38px;
+    margin-top: -162px;
+    margin-left: 2px;
   }
   .production .item:nth-child(4) img {
-    margin-top: 112px;
-    margin-left: -50px;
+    margin-top: -38px;
+    margin-left: 0px;
     transform: rotate(13deg);
   }
 
@@ -1612,6 +1677,7 @@ button {
     margin-top: 30px;
   }
   .production .item {
+    padding-top: 30px;
     padding-left: 0;
     text-align: center;
     font-size: 24px;
@@ -1631,21 +1697,19 @@ button {
   }
   .production .item img {
     position: relative;
-    margin: 0 auto -20px !important;
+    margin: 0 auto 20px !important;
     display: block !important;
     left: 0;
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    transform: rotate(4.5deg) !important;
     order: 1;
-    width: 500px;
-    height: 400px;
-    object-fit: contain;
+    width: 66.6666666667% !important;
+    height: auto !important;
   }
   .production .item > * {
     order: 3;
+  }
+  .production .item + .item {
+    margin-top: 0;
   }
 
   .productionSection {
@@ -1936,13 +2000,10 @@ button {
     line-height: 19px;
   }
   .production .item img {
-    transform: rotate(-10deg) !important;
-    object-fit: cover;
-    margin: 0 auto 0 !important;
-    height: 68.9655172414%;
+    width: 66.6666666667% !important;
   }
   .production .slick-dots {
-    margin-top: 5px;
+    margin-top: 55px;
   }
 
   .actionSection {
@@ -2131,11 +2192,19 @@ button {
   .advList .advItem {
     width: 100%;
   }
+
+  .production .item img {
+    margin-top: 0 !important;
+  }
 }
 @media (max-width: 479px) {
   .tableVitamins td {
     padding: 0 4px;
     font-size: 13px;
+  }
+
+  .production .item img {
+    width: 90% !important;
   }
 }
 @media (min-width: 768px) {
