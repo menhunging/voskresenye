@@ -4,6 +4,9 @@ body {
     margin: 0 auto;
     font-family: $fontInter;
     overflow-x: hidden;
+    &.hidden {
+        overflow: hidden;
+    }
 }
 
 html {
@@ -254,23 +257,6 @@ button {
     }
 }
 
-// .table {
-//     display: table;
-//     width: 100%;
-//     .thead,
-//     .tbody {
-//         display: table-row-group;
-//     }
-//     .tr {
-//         display: table-row;
-//     }
-//     .td,
-//     .th {
-//         display: table-cell;
-//         vertical-align: middle;
-//     }
-// }
-
 .slick-dots {
     display: flex;
     justify-content: center;
@@ -296,5 +282,3 @@ button {
         }
     }
 }
-
-

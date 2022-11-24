@@ -27,6 +27,11 @@
             color: #fff;
         }
     }
+    &.btnTran {
+        border: solid 1px #b01f30;
+        background-color: transparent;
+        color: #332f2e;
+    }
 }
 
 .modal__close {
@@ -87,6 +92,19 @@
     }
 }
 
+.btnDialog {
+    display: none;
+    background-image: url("../img/dialog.svg");
+    width: 73px;
+    height: 73px;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 9;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 @media (max-width: 991px) {
     .btn {
         font-size: 18px;
@@ -97,5 +115,8 @@
 @media (max-width: 767px) {
     .btn {
         font-size: 14px;
+    }
+    .btnDialog {
+        display: block;
     }
 }

@@ -1,21 +1,29 @@
 $(document).ready(function () {
 
-    MicroModal.init({
-        openTrigger: 'data-custom-open',
-        disableScroll: false,
-        awaitCloseAnimation: true
-    })
+    if ($('.modal').length > 0) {
+        MicroModal.init({
+            openTrigger: 'data-custom-open',
+            disableScroll: false,
+            awaitCloseAnimation: true
+        })
 
-    $('input').on('keyup', function () {
-        var $this = $(this),
-            val = $this.val();
+        $('a[data-custom-open]').map(function () {
+            $(this).click(e => e.preventDefault())
+        })
+    }
 
-        if (val.length >= 1) {
-            $this.addClass('notempty');
-        } else {
-            $this.removeClass('notempty');
-        }
-    });
+    if ($('.inputList').length > 0) {
+        $('input').on('keyup', function () {
+            var $this = $(this),
+                val = $this.val();
+
+            if (val.length >= 1) {
+                $this.addClass('notempty');
+            } else {
+                $this.removeClass('notempty');
+            }
+        });
+    }
 
     if ($('#phoneInput').length > 0) {
         $("#phoneInput").inputmask({
@@ -61,8 +69,6 @@ $(document).ready(function () {
                     slidesToScroll: 1,
                 }
             ]
-            // prevArrow: "<button class='slide-arrow slick-prev'><span class='slide-text'>пред</span></button>",
-            // nextArrow: "<button class='slide-arrow slick-next'><span class='slide-text'>след</span></button>"
         })
 
     }
@@ -99,20 +105,42 @@ $(document).ready(function () {
         })
     }
 
+    if ($(".header").length) {
+        let header = $('.header');
 
+        if ($(window).scrollTop() > 1) {
+            header.addClass('scroll');
+        } else {
+            header.removeClass('scroll');
+        }
 
-
-
-
-    if ($('.linkFancyBox').length > 0) {
-        Fancybox.bind("[data-fancybox]", {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 1) {
+                header.addClass('scroll');
+            } else {
+                header.removeClass('scroll');
+            }
         });
     }
 
+    if ($('.menu').length > 0) {
+        $('.menu ul li a').click(function () {
+            if ($('.headerContent').hasClass('open')) {
+                $('.headerContent').removeClass('open')
+                $('.btnBurger').removeClass('open')
+            }
+        })
+    }
+
+    if ($('.btnDialog').length > 0) {
+        $('.btnDialog').click(function () {
+            $(this).toggleClass('open')
+            $('.dialogsSection').toggleClass('open')
+            $('body').toggleClass('hidden')
+        })
+    }
 
 })
-
-
 
 $(window).resize(function () {
     if ($(window).width() < 992) {

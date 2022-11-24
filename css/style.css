@@ -199,6 +199,9 @@ body {
   font-family: "Inter";
   overflow-x: hidden;
 }
+body.hidden {
+  overflow: hidden;
+}
 
 html {
   scroll-behavior: smooth;
@@ -524,6 +527,11 @@ button {
   background-color: #332f2e;
   color: #fff;
 }
+.btn.btnTran {
+  border: solid 1px #b01f30;
+  background-color: transparent;
+  color: #332f2e;
+}
 
 .modal__close {
   position: absolute;
@@ -601,6 +609,19 @@ button {
   margin-top: 6px;
 }
 
+.btnDialog {
+  display: none;
+  background-image: url("../img/dialog.svg");
+  width: 73px;
+  height: 73px;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 9;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media (max-width: 991px) {
   .btn {
     font-size: 18px;
@@ -610,6 +631,10 @@ button {
 @media (max-width: 767px) {
   .btn {
     font-size: 14px;
+  }
+
+  .btnDialog {
+    display: block;
   }
 }
 .header {
@@ -633,6 +658,9 @@ button {
   position: absolute;
   top: 0;
   left: 30px;
+}
+.header .logoWrapper .logoMobile {
+  display: none;
 }
 .header .menu {
   order: 2;
@@ -1104,19 +1132,22 @@ button {
   display: flex;
   flex-wrap: wrap;
 }
-.productSection .row .leftSide {
+.productSection .leftSide {
   width: 351px;
   display: flex;
-  align-items: center;
-  padding-top: 135px;
+  align-items: flex-start;
+  flex-direction: column;
   justify-content: flex-start;
 }
-.productSection .row .rightSide {
+.productSection .leftSide .title {
+  display: none;
+}
+.productSection .rightSide {
   width: calc(100% - 351px);
   padding-left: 129px;
 }
-.productSection .title {
-  display: none;
+.productSection .rightSide .title + * {
+  margin-top: 27px;
 }
 .productSection .title,
 .productSection .productInfo {
@@ -1154,6 +1185,9 @@ button {
 .productSection .btn {
   margin-top: 91px;
   padding: 15px 32px;
+}
+.productSection .pic {
+  margin-top: 72px;
 }
 
 .tableRatio {
@@ -1221,6 +1255,94 @@ button {
   position: absolute;
   right: 16px;
   top: 15px;
+}
+
+.dialogsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  z-index: 8;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.dialogsSection .btn {
+  min-width: 213px;
+  padding: 0 20px;
+}
+.dialogsSection .btn + .btn {
+  margin-top: 20px;
+}
+.dialogsSection.open {
+  left: 0;
+}
+
+.listAddPictures {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 20px;
+  margin: 50px -15px 0;
+}
+.listAddPictures .item {
+  width: 118px;
+  height: 56px;
+  position: relative;
+  margin: 0 15px 20px;
+}
+.listAddPictures .item img {
+  object-fit: contain;
+  width: 100%;
+}
+.listAddPictures .delete {
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+}
+.listAddPictures .delete > * {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  height: 1px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.listAddPictures .delete > *:nth-child(2) {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: -1px;
+}
+.listAddPictures .addPhotos {
+  border: solid 1px #fff;
+  width: 100%;
+  height: 56px;
+  position: relative;
+  background-image: url("../img/plus.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+.listAddPictures .addPhotos input {
+  display: none;
+}
+.listAddPictures + .checkBlock {
+  margin-top: 25px !important;
 }
 
 @media (max-width: 1799px) {
@@ -1349,19 +1471,25 @@ button {
   .productSection {
     padding: 50px 0;
   }
-  .productSection .row .leftSide {
+  .productSection .leftSide {
     width: 100%;
     padding: 0;
-    display: block;
     text-align: center;
   }
-  .productSection .row .leftSide img {
-    margin: 30px auto 0;
-    height: 324px;
+  .productSection .leftSide .title {
+    display: block;
+    width: 100%;
+    order: 1;
   }
-  .productSection .row .rightSide {
+  .productSection .leftSide .title .name {
+    margin-bottom: 30px;
+  }
+  .productSection .rightSide {
     width: 100%;
     padding: 30px 0 0;
+  }
+  .productSection .rightSide .title + * {
+    margin-top: 0;
   }
   .productSection .productInfo {
     text-align: center;
@@ -1371,8 +1499,17 @@ button {
     text-align: left;
   }
   .productSection .title {
-    display: block;
-    width: 100%;
+    display: none;
+  }
+  .productSection .picDesc {
+    margin: -41px auto 0;
+    order: 3;
+    max-width: 260px;
+  }
+  .productSection .pic {
+    margin: 30px auto 0;
+    height: 324px;
+    order: 2;
   }
 
   .footNote {
@@ -1388,7 +1525,7 @@ button {
     margin: 0 -2px;
   }
   .tableVitamins td {
-    padding: 0;
+    padding: 5px;
   }
 
   .tableRatio td {
@@ -1520,8 +1657,37 @@ button {
     width: 100%;
   }
 
+  .pageWrapper {
+    padding-top: 169px;
+  }
+
   .header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     padding: 20px 15px 10px;
+    z-index: 9;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .header.scroll > .logoWrapper {
+    margin: -18px auto 0px;
+  }
+  .header.scroll > .logoWrapper .logo {
+    display: none;
+  }
+  .header.scroll > .logoWrapper .logoMobile {
+    display: block;
+    margin: 0 auto;
+  }
+  .header.scroll .btnBurger .line {
+    background-color: #fff;
+  }
+  .header.scroll .linkPhoneMob {
+    background-image: url("../img/phone-light.png");
   }
   .header .logoWrapper {
     position: relative;
@@ -1945,15 +2111,6 @@ button {
     line-height: 24px;
     margin-bottom: 30px;
   }
-  .productSection .leftSide img {
-    margin: 30px 0;
-  }
-  .productSection .rightSide .productInfo .name {
-    display: none;
-  }
-  .productSection .rightSide .productInfo .name + p {
-    display: none;
-  }
   .productSection .tableRatio {
     margin-top: 45px;
   }
@@ -1964,10 +2121,26 @@ button {
     margin-top: 50px;
     padding: 15px 32px;
   }
+
+  .footNote {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 @media (max-width: 639px) {
   .advList .advItem {
     width: 100%;
+  }
+}
+@media (max-width: 479px) {
+  .tableVitamins td {
+    padding: 0 4px;
+    font-size: 13px;
+  }
+}
+@media (min-width: 768px) {
+  .dialogsSection {
+    left: -100% !important;
   }
 }
 

@@ -20,6 +20,9 @@
         position: absolute;
         top: 0;
         left: 30px;
+        .logoMobile {
+            display: none;
+        }
     }
     .menu {
         order: 2;
@@ -483,21 +486,27 @@
     .row {
         display: flex;
         flex-wrap: wrap;
-        .leftSide {
-            width: 351px;
-            display: flex;
-            align-items: center;
-            padding-top: 135px;
-            justify-content: flex-start;
-        }
-        .rightSide {
-            width: calc(100% - 351px);
-            padding-left: 129px;
+    }
+    .leftSide {
+        width: 351px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        .title {
+            display: none;
         }
     }
-    .title{
-        display: none;
+    .rightSide {
+        width: calc(100% - 351px);
+        padding-left: 129px;
+        .title {
+            & + * {
+                margin-top: 27px;
+            }
+        }
     }
+
     .title,
     .productInfo {
         font-size: 20px;
@@ -532,6 +541,11 @@
     .btn {
         margin-top: 91px;
         padding: 15px 32px;
+    }
+    .picDesc {
+    }
+    .pic {
+        margin-top: 72px;
     }
 }
 
@@ -599,4 +613,81 @@
     position: absolute;
     right: 16px;
     top: 15px;
+}
+
+.dialogsSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 8;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    @include transition(all 0.3s);
+    .btn {
+        min-width: 213px;
+        padding: 0 20px;
+        & + .btn {
+            margin-top: 20px;
+        }
+    }
+    &.open {
+        left: 0;
+    }
+}
+
+.listAddPictures {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    margin: 50px -15px 0;
+    .item {
+        width: 118px;
+        height: 56px;
+        position: relative;
+        margin: 0 15px 20px;
+        img {
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+    .delete {
+        position: absolute;
+        right: -15px;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+        & > * {
+            position: relative;
+            display: block;
+            background-color: #fff;
+            width: 100%;
+            height: 1px;
+            @include transform(rotate(45deg));
+            &:nth-child(2) {
+                @include transform(rotate(-45deg));
+                top: -1px;
+            }
+        }
+    }
+    .addPhotos {
+        border: solid 1px #fff;
+        width: 100%;
+        height: 56px;
+        position: relative;
+        background-image: url("../img/plus.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        input {
+            display: none;
+        }
+    }
+    & + .checkBlock {
+        margin-top: 25px !important;
+    }
 }

@@ -142,20 +142,26 @@
 
     .productSection {
         padding: 50px 0;
-        .row {
-            .leftSide {
-                width: 100%;
-                padding: 0;
+        .leftSide {
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            .title {
                 display: block;
-                text-align: center;
-                img {
-                    margin: 30px auto 0;
-                    height: 324px;
+                width: 100%;
+                order: 1;
+                .name {
+                    margin-bottom: 30px;
                 }
             }
-            .rightSide {
-                width: 100%;
-                padding: 30px 0 0;
+        }
+        .rightSide {
+            width: 100%;
+            padding: 30px 0 0;
+            .title {
+                & + * {
+                    margin-top: 0;
+                }
             }
         }
         .productInfo {
@@ -165,11 +171,20 @@
         .tableRatio {
             text-align: left;
         }
+
         .title {
-            display: block;
-            width: 100%;
+            display: none;
         }
- 
+        .picDesc {
+            margin: -41px auto 0;
+            order: 3;
+            max-width: 260px;
+        }
+        .pic {
+            margin: 30px auto 0;
+            height: 324px;
+            order: 2;
+        }
     }
 
     .footNote {
@@ -184,7 +199,7 @@
         border-spacing: 2px;
         margin: 0 -2px;
         td {
-            padding: 0;
+            padding: 5px;
         }
     }
 
@@ -335,8 +350,38 @@
         width: 100%;
     }
 
+    .pageWrapper {
+        padding-top: 169px;
+    }
+
     .header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
         padding: 20px 15px 10px;
+        z-index: 9;
+        @include transition(all 0.3s);
+        &.scroll {
+            & > .logoWrapper {
+                margin: -18px auto 0px;
+                .logo {
+                    display: none;
+                }
+                .logoMobile {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            .btnBurger {
+                .line {
+                    background-color: #fff;
+                }
+            }
+            .linkPhoneMob {
+                background-image: url("../img/phone-light.png");
+            }
+        }
         .logoWrapper {
             position: relative;
             width: 245px;
@@ -354,6 +399,7 @@
             &.open {
                 left: 0;
             }
+
             .logoWrapper {
                 width: 162px;
                 position: relative;
@@ -782,24 +828,10 @@
                 margin-bottom: 30px;
             }
         }
-
         .leftSide {
             img {
-                margin: 30px 0;
             }
         }
-
-        .rightSide {
-            .productInfo {
-                .name {
-                    display: none;
-                    & + p {
-                        display: none;
-                    }
-                }
-            }
-        }
-
         .tableRatio {
             margin-top: 45px;
         }
@@ -811,6 +843,11 @@
             padding: 15px 32px;
         }
     }
+
+    .footNote {
+        font-size: 16px;
+        line-height: 19px;
+    }
 }
 
 @media (max-width: 639px) {
@@ -818,5 +855,21 @@
         .advItem {
             width: 100%;
         }
+    }
+}
+
+@media (max-width: 479px) {
+    .tableVitamins {
+        td {
+            padding: 0 4px;
+            font-size: 13px;
+        }
+    }
+}
+
+// min-width
+@media (min-width: 768px) {
+    .dialogsSection {
+        left: -100% !important;
     }
 }
