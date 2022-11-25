@@ -432,8 +432,12 @@
         margin: 157px -7.5px 0;
     }
     .item {
+        @include transition(all 0.5s);
         @include invisLink;
         margin: 0 7.5px;
+        &:hover {
+            @include transform(scale(1.1));
+        }
         img {
         }
     }
@@ -740,6 +744,31 @@
             &:hover {
                 text-decoration-color: transparent;
             }
+        }
+    }
+}
+
+#modalError,
+#modalSuccess {
+    .modal__container {
+        max-width: 586px;
+    }
+    .modalBlock {
+        .cap {
+            &::before {
+                display: none;
+            }
+        }
+        .controls {
+            margin-top: 0;
+        }
+    }
+    .link {
+        color: #fff;
+        font-size: 20px;
+        line-height: 45px;
+        &:hover {
+            color: $colorHover;
         }
     }
 }

@@ -39,7 +39,7 @@
     width: 27px;
     display: block;
     right: 11px;
-    top: 11px;
+    top: 20px;
     height: 27px;
     span {
         display: block;
@@ -103,6 +103,12 @@
     z-index: 9;
     background-position: center;
     background-repeat: no-repeat;
+    &.open {
+        background-image: url("../img/close.png");
+        background-color: $colorHover;
+        @include border-radius(50%);
+        background-size: 20%;
+    }
 }
 
 @media (max-width: 991px) {

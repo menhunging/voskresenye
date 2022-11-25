@@ -346,15 +346,21 @@ button {
 }
 
 .modal__container {
-  padding: 0px 21px;
+  padding: 10px 0;
+  background: transparent;
+  margin: 0;
   max-width: 846px;
   width: 100%;
-  background-image: url("../img/back-modal.jpg");
-  background-position: center;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   border-radius: 0;
+}
+.modal__container .modalWrap {
+  background-image: url("../img/back-modal.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 21px 21px;
 }
 
 .modalBlock .cap {
@@ -495,6 +501,22 @@ button {
   background: #b01f30;
 }
 
+.overlayBurger {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  display: none;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.33);
+}
+.overlayBurger.open {
+  display: block;
+  pointer-events: inherit;
+}
+
 .btn {
   cursor: pointer;
   position: relative;
@@ -539,7 +561,7 @@ button {
   width: 27px;
   display: block;
   right: 11px;
-  top: 11px;
+  top: 20px;
   height: 27px;
 }
 .modal__close span {
@@ -621,6 +643,15 @@ button {
   z-index: 9;
   background-position: center;
   background-repeat: no-repeat;
+}
+.btnDialog.open {
+  background-image: url("../img/close.png");
+  background-color: #332f2e;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background-size: 20%;
 }
 
 @media (max-width: 991px) {
@@ -1069,6 +1100,10 @@ button {
   margin: 157px -7.5px 0;
 }
 .partnersSection .item {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
   position: relative;
   margin: 0 7.5px;
 }
@@ -1085,6 +1120,13 @@ button {
   white-space: nowrap;
   cursor: pointer;
   z-index: 5;
+}
+.partnersSection .item:hover {
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
 }
 .footer {
   position: relative;
@@ -1407,6 +1449,29 @@ button {
 }
 .breadСrumbs li a:hover {
   text-decoration-color: transparent;
+}
+
+#modalError .modal__container,
+#modalSuccess .modal__container {
+  max-width: 586px;
+}
+#modalError .modalBlock .cap::before,
+#modalSuccess .modalBlock .cap::before {
+  display: none;
+}
+#modalError .modalBlock .controls,
+#modalSuccess .modalBlock .controls {
+  margin-top: 0;
+}
+#modalError .link,
+#modalSuccess .link {
+  color: #fff;
+  font-size: 20px;
+  line-height: 45px;
+}
+#modalError .link:hover,
+#modalSuccess .link:hover {
+  color: #332f2e;
 }
 
 @media (max-width: 1799px) {
@@ -1758,7 +1823,7 @@ button {
     margin: 0 auto;
   }
   .header .headerContent {
-    position: absolute;
+    position: fixed;
     left: -229px;
     top: 0;
     width: 229px;
@@ -1769,6 +1834,9 @@ button {
     transition: left 0.3s;
     z-index: 9;
     padding: 7px 0 25px;
+    height: 100%;
+    display: block;
+    overflow: hidden;
   }
   .header .headerContent.open {
     left: 0;
@@ -1891,7 +1959,7 @@ button {
   }
   .catalogList .slick-dots {
     position: absolute;
-    top: 228px;
+    top: -37px;
     left: -7px;
     width: 100%;
   }
@@ -1900,14 +1968,14 @@ button {
   }
 
   .product {
-    padding: 35px 10px 27px;
+    padding: 55px 10px 27px;
   }
   .product img {
     height: 231px;
     min-height: inherit;
   }
   .product .info {
-    margin-top: 52px;
+    margin-top: 15px;
   }
   .product .info .name {
     font-size: 17px;
@@ -2137,7 +2205,11 @@ button {
   }
 
   .modal__container {
-    padding: 0px 10px;
+    padding: 10px 0;
+  }
+
+  .modal__container .modalWrap {
+    padding: 20px 10px;
   }
 
   .inputWrapper label {
@@ -2194,6 +2266,13 @@ button {
 
   .production .item img {
     margin-top: 0 !important;
+  }
+
+  #modalError .link,
+#modalSuccess .link {
+    color: #fff;
+    font-size: 16px;
+    line-height: 25px;
   }
 }
 @media (max-width: 479px) {

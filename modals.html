@@ -4,7 +4,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width,user-scalable=no'>
-    <title>О товаре</title>
+    <title>Модалки</title>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -15,169 +15,38 @@
     <link rel='stylesheet' type='text/css' href='css/fancybox.css'>
     <link rel='stylesheet' type='text/css' href='css/style.css'>
 
+    <style>
+        .testLinks a:hover {
+            text-decoration-color: #fff;
+        }
+
+        .testLinks a {
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            transition: all .3s;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        .testLinks {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+
+        }
+    </style>
+
 </head>
 
 <body>
     <div class="pageWrapper">
-        <header class="header">
-            <div class="logoWrapper">
-                <a href="#"></a>
-                <img class="logo" src="img/logo.svg" alt="logo">
-                <img class="logoMobile" src="img/logo-duck.svg" alt="logo">
-            </div>
-            <div class="headerContent">
-                <div class="logoWrapper">
-                    <a href="#"></a>
-                    <img class="logo" src="img/logo.svg" alt="logo">
-                </div>
-                <nav class="menu">
-                    <ul>
-                        <li><a href="#products">Продукция</a></li>
-                        <li><a href="#advantages">Преимущества</a></li>
-                        <li><a href="#production">Производство</a></li>
-                        <li><a href="#" class="coop" data-custom-open="modalCall">Сотрудничество</a></li>
-                        <li><a href="#" class="buy">Купить</a></li>
-                    </ul>
-                </nav>
-                <a href="#" class="coop" data-custom-open="modalCall">Сотрудничество</a>
-                <div class="infoCompany">
-                    <a href="tel:+74959335959" class="linkPhone">+7(495)933-59-59</a>
-                    <span class="address">119019, г. Москва, ул. Знаменка, дом 13, строение 1, подвал, помещение V ,
-                        ком. 6б</span>
-                </div>
-            </div>
-            <button class="btnBurger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-            <a href="#" class="linkPhoneMob"></a>
-        </header>
-        <main class="main">
-            <div class="productSection">
-                <div class="container">
-                    <div class="row">
-                        <ul class="breadСrumbs">
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">Каталог</a></li>
-                            <li>Овощи с индейкой и базиликом</li>
-                        </ul>
-                        <div class="leftSide">
-                            <div class="title">
-                                <h2 class="name">Овощи с индейкой и базиликом</h2>
-                                <p><b>Насладитесь богатым вкусом и ароматом этого постного блюда! Обогащено кальцием и
-                                        витамином
-                                        D.
-                                    </b></p>
-                            </div>
-                            <img class="picDesc" src="img/product-big-desc.png" alt="">
-                            <img class="pic" src="img/product-big.png" alt="">
-                        </div>
-                        <div class="rightSide">
-                            <div class="productInfo">
-                                <div class="title">
-                                    <h2 class="name">Овощи с индейкой и базиликом</h2>
-                                    <p><b>Насладитесь богатым вкусом и ароматом этого постного блюда! Обогащено кальцием
-                                            и
-                                            витамином
-                                            D.
-                                        </b></p>
-                                </div>
-                                <p><strong>СОСТАВ:</strong> пюре из кабачков, мясо индейки, вода питьевая, картофель,
-                                    пюре из
-                                    моркови, зеленый
-                                    горошек, масло растительное рапсовое, перец болгарский, томатная паста, сахар, соль,
-                                    карбонат кальция, базилик, витамин D3</p>
-
-                                <table class="tableRatio">
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="2">Среднее значение показателей пищевой и энергетической
-                                                ценности в
-                                                100г продукта:</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Белки</td>
-                                            <td>5,0</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Жиры</td>
-                                            <td>3,4</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Углеводы</td>
-                                            <td>5,0</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Энергетическая ценность</td>
-                                            <td>70/300 ккал/кДж</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <table class="tableVitamins">
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="2">Массовая доля в 100г</td>
-                                            <td>% от среднесуточной
-                                                потребности
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Витами D3
-                                                (холекальциферол), мкг</td>
-                                            <td>2,25</td>
-                                            <td>15</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Минеральных веществ кальций (Са), мг</td>
-                                            <td>150,0</td>
-                                            <td>15</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-
-                                <div class="footNote">
-                                    <p><span>Витамин D:</span>
-                                        снижает риск сердечно-сосудистых заболеваний, регулирует сон, улучшает
-                                        усвояемость
-                                        кальция, поддерживает работу щитовидной железы</p>
-                                </div>
-
-                                <a href="#" class="btn btnRed"><img src="img/arrow-back.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </main>
-        <footer class="footer">
-            <div class="container">
-                <div class="footerTop">
-                    <div class="infoCompany">
-                        <a href="tel:+74959335959" class="linkPhone">+7(495)933-59-59</a>
-                        <span class="address">119019, г. Москва, ул. Знаменка, дом 13, строение 1, подвал, помещение V ,
-                            ком. 6б</span>
-                    </div>
-                    <a href="#" class="linkMail" data-custom-open="modalQuality">Написать нам</a>
-                </div>
-                <div class="footerBot">
-                    <ul class="text">
-                        <li><a href="#">Политика конфиденциальности интернет-сайта </a></li>
-                        <li><a href="#">Политика в отношении обработки персональных данных</a></li>
-                    </ul>
-                    <a href="#" class="btn btnWhite">Наверх</a>
-                </div>
-            </div>
-        </footer>
-        <button class="btnDialog"></button>
-        <div class="dialogsSection">
-            <a href="#" class="btn btnRed" data-custom-open="modalQuality">По вопросам качества</a>
-            <a href="#" class="btn btnTran" data-custom-open="modalCall">Сотрудничество</a>
-        </div>
-        <div class="overlayBurger"></div>
+        <ul class="testLinks">
+            <li> <a href="#" class="coop" data-custom-open="modalCall">Сотрудничество</a></li>
+            <li> <a href="#" class="coop" data-custom-open="modalQuality">Сотрудничество с картинками</a></li>
+            <li> <a href="#" class="coop" data-custom-open="modalSuccess">Сообщение отправлено</a></li>
+            <li> <a href="#" class="coop" data-custom-open="modalError">Ошибка отправки</a></li>
+        </ul>
         <div class="micromodal-slide modal" id="modalCall" aria-hidden="true">
             <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
                 <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modalCall-title">

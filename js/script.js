@@ -99,14 +99,21 @@ $(document).ready(function () {
 
     }
 
-    if ($(".btnBurger").length) {
+    if ($(".btnBurger").length > 0) {
         $(".btnBurger").on("click", function () {
             $(".btnBurger").toggleClass("open")
             $(".header .headerContent").toggleClass("open")
+            $('.overlayBurger').toggleClass("open")
         })
     }
 
-    if ($(".header").length) {
+    if ($(".overlayBurger").length > 0) {
+        $('.overlayBurger').click(function () {
+            deleteClassBurger()
+        })
+    }
+
+    if ($(".header").length > 0) {
         let header = $('.header');
 
         if ($(window).scrollTop() > 1) {
@@ -127,8 +134,7 @@ $(document).ready(function () {
     if ($('.menu').length > 0) {
         $('.menu ul li a').click(function () {
             if ($('.headerContent').hasClass('open')) {
-                $('.headerContent').removeClass('open')
-                $('.btnBurger').removeClass('open')
+                deleteClassBurger()
             }
         })
     }
@@ -146,7 +152,18 @@ $(document).ready(function () {
         wow.init();
     }
 
+    if ($('.listAddPictures').length > 0) {
+        $('.listAddPictures .delete').click(function () {
+            $(this).parents('.item').remove()
+        })
+    }
 })
+
+let deleteClassBurger = () => {
+    $('.headerContent').removeClass('open')
+    $('.btnBurger').removeClass('open')
+    $('.overlayBurger').removeClass("open")
+}
 
 $(window).resize(function () {
     if ($(window).width() < 992) {

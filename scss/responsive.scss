@@ -391,7 +391,7 @@
             margin: 0 auto;
         }
         .headerContent {
-            position: absolute;
+            position: fixed;
             left: -229px;
             top: 0;
             width: 229px;
@@ -399,6 +399,9 @@
             @include transition(left 0.3s);
             z-index: 9;
             padding: 7px 0 25px;
+            height: 100%;
+            display: block;
+            overflow: hidden;
             &.open {
                 left: 0;
             }
@@ -530,7 +533,7 @@
         }
         .slick-dots {
             position: absolute;
-            top: 228px;
+            top: -37px;
             left: -7px;
             width: 100%;
             li {
@@ -544,13 +547,14 @@
     }
 
     .product {
-        padding: 35px 10px 27px;
+        padding: 55px 10px 27px;
         img {
             height: 231px;
             min-height: inherit;
         }
         .info {
-            margin-top: 52px;
+            margin-top: 15px;
+
             .name {
                 font-size: 17px;
                 line-height: 21px;
@@ -788,7 +792,13 @@
     }
 
     .modal__container {
-        padding: 0px 10px;
+        padding: 10px 0;
+    }
+
+    .modal__container {
+        .modalWrap {
+            padding: 20px 10px;
+        }
     }
 
     .inputWrapper {
@@ -861,6 +871,14 @@
             img {
                 margin-top: 0 !important;
             }
+        }
+    }
+    #modalError,
+    #modalSuccess {
+        .link {
+            color: #fff;
+            font-size: 16px;
+            line-height: 25px;
         }
     }
 }
