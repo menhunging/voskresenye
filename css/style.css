@@ -446,7 +446,7 @@ button {
   width: 18px;
   height: 18px;
   left: 1px;
-  top: 0;
+  top: -1px;
   background-color: transparent;
   border: 1px solid #fff;
 }
@@ -461,7 +461,7 @@ button {
   width: 10px;
   height: 10px;
   left: 5px;
-  top: 4px;
+  top: 3px;
   background-color: #b01f30;
   opacity: 0;
 }
