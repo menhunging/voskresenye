@@ -365,6 +365,20 @@
         padding: 20px 15px 10px;
         z-index: 9;
         @include transition(all 0.3s);
+        @include after {
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        &.open {
+            &::after {
+                opacity: 1;
+            }
+        }
         &.scroll {
             & > .logoWrapper {
                 margin: -18px auto 0px;
@@ -382,7 +396,7 @@
                 }
             }
             .linkPhoneMob {
-                background-image: url("../img/phone-light.png");
+                background-image: url("../img/phone.svg");
             }
         }
         .logoWrapper {
@@ -399,7 +413,7 @@
             @include transition(left 0.3s);
             z-index: 9;
             padding: 7px 0 25px;
-            height: 100%;
+            // height: 100%;
             display: block;
             overflow: hidden;
             &.open {
@@ -450,6 +464,8 @@
                     line-height: 18px;
                     background-size: 12px;
                     padding-left: 34px;
+                    background-size: 15px;
+                    background-position: 4px center;
                 }
                 .address {
                     font-size: 10px;
@@ -457,6 +473,8 @@
                     background-size: 12px;
                     margin-top: 10px;
                     padding-left: 35px;
+                    background-size: 20px;
+                    background-position: left center;
                 }
             }
         }
@@ -586,10 +604,10 @@
             }
         }
         .picture {
-            height: 140px;
+            height: 120px;
             background-size: 80%;
-            width: 139px;
-            margin: 0 auto 15px;
+            width: 120px;
+            margin: 0 auto 20px;
         }
     }
 
@@ -782,6 +800,9 @@
                 & + .inputWrapper {
                     margin-top: 12px;
                 }
+                textarea {
+                    margin-top: 10px;
+                }
             }
         }
         .controls {
@@ -809,6 +830,13 @@
             font-size: 18px;
             height: 20px;
             line-height: 20px;
+        }
+        textarea {
+            font-size: 18px;
+            line-height: 20px;
+            &::placeholder {
+                font-size: 12px;
+            }
         }
     }
 

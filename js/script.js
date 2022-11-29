@@ -102,14 +102,9 @@ $(document).ready(function () {
     if ($(".btnBurger").length > 0) {
         $(".btnBurger").on("click", function () {
             $(".btnBurger").toggleClass("open")
+            $(".header").toggleClass("open")
             $(".header .headerContent").toggleClass("open")
             $('.overlayBurger').toggleClass("open")
-        })
-    }
-
-    if ($(".overlayBurger").length > 0) {
-        $('.overlayBurger').click(function () {
-            deleteClassBurger()
         })
     }
 
@@ -157,12 +152,27 @@ $(document).ready(function () {
             $(this).parents('.item').remove()
         })
     }
+
+    if ($(window).width() < 768) {
+        windowClick()
+    }
+
 })
 
 let deleteClassBurger = () => {
+    $('.header').removeClass('open')
     $('.headerContent').removeClass('open')
     $('.btnBurger').removeClass('open')
     $('.overlayBurger').removeClass("open")
+}
+
+let windowClick = () => {
+    window.addEventListener('click', e => {
+        const target = e.target
+        if (!target.closest('.btnBurger') && !target.closest('.headerContent')) {
+            deleteClassBurger()
+        }
+    })
 }
 
 $(window).resize(function () {
@@ -175,6 +185,11 @@ $(window).resize(function () {
     if ($(window).width() < 768) {
         if ($('.catalogList').length > 0) {
             $('.catalogList').slick('refresh');
+        }
+        windowClick()
+    } else {
+        if ($('.overlayBurger').hasClass('open')) {
+            deleteClassBurger()
         }
     }
 });

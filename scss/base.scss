@@ -129,9 +129,8 @@ button {
         padding: 3px 8px;
         outline: none;
         &::placeholder {
-            font-style: italic;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 30px;
             color: rgba(255, 255, 255, 0.6);
         }
@@ -298,7 +297,7 @@ button {
     pointer-events: none;
     display: none;
     z-index: 5;
-    background-color: rgba(0, 0, 0, 0.33);
+    background-color: rgba(0, 0, 0, 0.5);
     &.open {
         display: block;
         pointer-events: inherit;
