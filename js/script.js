@@ -127,11 +127,30 @@ $(document).ready(function () {
     }
 
     if ($('.menu').length > 0) {
-        $('.menu ul li a').click(function () {
+        $(".menu ul li a").on("click", function () {
+
             if ($('.headerContent').hasClass('open')) {
                 deleteClassBurger()
             }
-        })
+
+            let href = $(this).attr("href");
+            let settingsScroll
+
+            if ($(window).width() < 768) {
+                settingsScroll = $(href).offset().top - 59
+            } else {
+                settingsScroll = $(href).offset().top
+            }
+
+            $("html, body").animate({
+                scrollTop: settingsScroll
+            }, {
+                duration: 370,
+                easing: "linear"
+            });
+
+            return false;
+        });
     }
 
     if ($('.btnDialog').length > 0) {

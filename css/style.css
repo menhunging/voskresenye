@@ -204,10 +204,6 @@ body.hidden {
   overflow: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 a {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -1977,7 +1973,8 @@ button {
     position: relative;
   }
   .catalogList + * {
-    margin-top: 42px;
+    margin-top: 0;
+    padding-top: 42px;
   }
   .catalogList .product {
     width: 100%;
