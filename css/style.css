@@ -976,32 +976,34 @@ button {
   margin-top: -29px;
 }
 .production .item:nth-child(1) img {
-  margin-left: 372px;
-  margin-top: -158px;
+  margin-top: -100px;
+  transform: rotate(12.94deg);
+  margin-left: 31px;
+  width: 405px;
+  height: 230px;
+  z-index: 2;
 }
 .production .item:nth-child(2) img {
-  margin-top: -273px;
-  transform: rotate(12.6deg);
-  margin-left: 37px;
-  width: 404px;
-  height: 230px;
+  margin-top: 282px;
+  transform: rotate(0.94deg);
+  width: 408px;
+  height: 253px;
+  margin-left: 50px;
 }
 .production .item:nth-child(3) img {
-  margin-top: -189px;
-  margin-left: 54px;
-  width: 410px;
-  height: 252px;
-  transform: rotate(13.82deg);
+  margin-left: 368px;
+  margin-top: -468px;
 }
 .production .item:nth-child(4) img {
-  margin-top: 42px;
-  margin-left: 56px;
-  width: 406px;
-  height: 251px;
-  transform: rotate(0.94deg);
+  display: none;
 }
 .production .item:nth-child(5) img {
-  display: none;
+  margin-top: -465px;
+  margin-left: 51px;
+  width: 409px;
+  height: 251px;
+  transform: rotate(13.94deg);
+  z-index: 3;
 }
 .production .cap {
   font-weight: 700;
@@ -1586,12 +1588,13 @@ button {
   .production .item:nth-child(2) img {
     margin-top: -234px;
     margin-left: 20px;
+    transform: rotate(13deg);
   }
   .production .item:nth-child(3) img {
-    margin-top: -162px;
+    margin-top: -73px;
     margin-left: 2px;
   }
-  .production .item:nth-child(4) img {
+  .production .item:nth-child(5) img {
     margin-top: -38px;
     margin-left: 0px;
     transform: rotate(13deg);
