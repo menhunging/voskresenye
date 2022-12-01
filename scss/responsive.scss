@@ -902,8 +902,8 @@
     }
 
     body{
-        background-image: url("../img/back-catalog.jpg");
-        background-position: center center;
+        background: url("../img/back-catalog.jpg")!important;
+        background-position: center;
     }
 }
 
