@@ -25,19 +25,24 @@ $(document).ready(function () {
         });
     }
 
-    if ($('#phoneInput').length > 0) {
-        $("#phoneInput").inputmask({
-            mask: "+7(999) 999-99-99",
-            placeholder: "*",
-            clearIncomplete: true
-        });
+    if ($('.phoneInput').length > 0) {
+        $(".phoneInput").map(function () {
+            $(this).inputmask({
+                mask: "+7(999) 999-99-99",
+                placeholder: "*",
+                clearIncomplete: true
+            });
+        })
+
     }
 
-    if ($('#emailInput').length > 0) {
-        $("#emailInput").inputmask({
-            mask: "*{3,20}@*{3,20}.*{3,20}",
-            clearIncomplete: true
-        });
+    if ($('.emailInput').length > 0) {
+        $(".emailInput").map(function () {
+            $(this).inputmask({
+                mask: "*{3,20}@*{3,20}.*{3,20}",
+                clearIncomplete: true
+            });
+        })
     }
 
     if ($('.btnTop').length > 0) {
