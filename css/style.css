@@ -2298,6 +2298,10 @@ button {
     font-size: 16px;
     line-height: 19px;
   }
+
+  .pageWrapper::after {
+    display: none;
+  }
 }
 @media (max-width: 639px) {
   .advList .advItem {
