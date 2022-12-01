@@ -239,7 +239,7 @@ button {
   display: flex;
   flex-direction: column;
   z-index: 3;
-  background: url(../img/back-page.jpg);
+  background: url(../img/backpage.jpg) !important;
 }
 .pageWrapper::after {
   content: "";
