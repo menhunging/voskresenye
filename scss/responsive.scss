@@ -894,17 +894,11 @@
     }
 
     .pageWrapper{
-        background-image: none;
-        background-position: center;
         &::after{
             display: none;
         }
     }
-
-    body{
-        background: url('../img/back-catalog.jpg')!important;
-        background-position: center;
-    }
+    
 }
 
 @media (max-width: 639px) {
