@@ -198,7 +198,6 @@ body {
   max-width: 1920px;
   margin: 0 auto;
   font-family: "Inter";
-  overflow-x: hidden;
 }
 body.hidden {
   overflow: hidden;
@@ -2308,8 +2307,8 @@ button {
   }
 
   body {
-    background-image: url("../img/back-catalog.jpg");
-    background-position: center center;
+    background: url("../img/back-catalog.jpg") !important;
+    background-position: center;
   }
 }
 @media (max-width: 639px) {
