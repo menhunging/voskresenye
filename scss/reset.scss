@@ -15,20 +15,13 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: auto;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
 }
 
 body {
     margin: 0 auto;
     padding: 0px;
-    -webkit-outline: none;
     outline: none;
     position: relative;
-    text-decoration-skip: objects;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
 }
 
 :focus,
