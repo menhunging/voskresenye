@@ -3,8 +3,9 @@ $(document).ready(function () {
     if ($('.modal').length > 0) {
         MicroModal.init({
             openTrigger: 'data-custom-open',
-            disableScroll: false,
-            awaitCloseAnimation: true
+            disableScroll: true,
+            awaitCloseAnimation: true,
+            
         })
 
         $('a[data-custom-open]').map(function () {
