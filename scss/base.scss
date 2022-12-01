@@ -55,7 +55,7 @@ button {
     display: flex;
     flex-direction: column;
     z-index: 3;
-    background-image: url("../img/back-catalog.jpg");
+    background-image: url(../img/back-catalog.jpg);
     background-position: center center;
     &::after {
         content: "";
