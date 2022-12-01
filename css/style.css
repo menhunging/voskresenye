@@ -2299,8 +2299,17 @@ button {
     line-height: 19px;
   }
 
+  .pageWrapper {
+    background-image: none;
+    background-position: center;
+  }
   .pageWrapper::after {
     display: none;
+  }
+
+  body {
+    background-image: url("../img/back-catalog.jpg");
+    background-position: center center;
   }
 }
 @media (max-width: 639px) {

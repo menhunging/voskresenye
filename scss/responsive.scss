@@ -894,9 +894,16 @@
     }
 
     .pageWrapper{
+        background-image: none;
+        background-position: center;
         &::after{
             display: none;
         }
+    }
+
+    body{
+        background-image: url("../img/back-catalog.jpg");
+        background-position: center center;
     }
 }
 
