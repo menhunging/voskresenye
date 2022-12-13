@@ -136,8 +136,6 @@ $(document).ready(function () {
 
         $(".menu ul li a").on("click", function () {
 
-            history.replaceState({}, '', '/')
-
             if ($('.headerContent').hasClass('open')) {
                 deleteClassBurger()
             }
