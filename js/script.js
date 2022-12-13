@@ -5,7 +5,7 @@ $(document).ready(function () {
             openTrigger: 'data-custom-open',
             disableScroll: true,
             awaitCloseAnimation: true,
-            
+
         })
 
         $('a[data-custom-open]').map(function () {
@@ -133,29 +133,35 @@ $(document).ready(function () {
     }
 
     if ($('.menu').length > 0) {
+
         $(".menu ul li a").on("click", function () {
+
+            history.replaceState({}, '', '/')
 
             if ($('.headerContent').hasClass('open')) {
                 deleteClassBurger()
             }
 
-            let href = $(this).attr("href");
-            let settingsScroll
+            if ($(this).attr("data-link")) {
+                let href = $(this).attr("data-link");
+                let settingsScroll
 
-            if ($(window).width() < 768) {
-                settingsScroll = $(href).offset().top - 59
-            } else {
-                settingsScroll = $(href).offset().top
+                if ($(window).width() < 768) {
+                    settingsScroll = $(href).offset().top - 59
+                } else {
+                    settingsScroll = $(href).offset().top
+                }
+
+                $("html, body").animate({
+                    scrollTop: settingsScroll
+                }, {
+                    duration: 370,
+                    easing: "linear"
+                });
+
+                return false;
             }
 
-            $("html, body").animate({
-                scrollTop: settingsScroll
-            }, {
-                duration: 370,
-                easing: "linear"
-            });
-
-            return false;
         });
     }
 
