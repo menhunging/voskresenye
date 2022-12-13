@@ -136,25 +136,24 @@ $(document).ready(function () {
 
         if (location.hash != "") {
 
-            let settingsScroll
+            let scroll
             hashLoad = location.hash
 
-            location.hash = ""
+            // location.hash = ""
 
             if ($(window).width() < 768) {
-                settingsScroll = $(hashLoad).offset().top - 59
+                scroll = $(hashLoad).offset().top - 59
             } else {
-                settingsScroll = $(hashLoad).offset().top
+                scroll = $(hashLoad).offset().top
             }
 
             $("html, body").animate({
-                scrollTop: settingsScroll
+                scrollTop: scroll
             }, {
                 duration: 0,
                 easing: "linear"
             });
 
-            return false;
 
         }
 
@@ -181,7 +180,6 @@ $(document).ready(function () {
                     easing: "linear"
                 });
 
-                return false;
             }
 
         });
