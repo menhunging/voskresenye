@@ -134,6 +134,30 @@ $(document).ready(function () {
 
     if ($('.menu').length > 0) {
 
+        if (location.hash != "") {
+
+            let settingsScroll
+            hashLoad = location.hash
+
+            location.hash = ""
+
+            if ($(window).width() < 768) {
+                settingsScroll = $(hashLoad).offset().top - 59
+            } else {
+                settingsScroll = $(hashLoad).offset().top
+            }
+
+            $("html, body").animate({
+                scrollTop: settingsScroll
+            }, {
+                duration: 0,
+                easing: "linear"
+            });
+
+            return false;
+
+        }
+
         $(".menu ul li a").on("click", function () {
 
             if ($('.headerContent').hasClass('open')) {
