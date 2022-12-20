@@ -37,14 +37,14 @@ $(document).ready(function () {
 
     }
 
-    if ($('.emailInput').length > 0) {
-        $(".emailInput").map(function () {
-            $(this).inputmask({
-                mask: "*{3,20}@*{3,20}.*{3,20}",
-                clearIncomplete: true
-            });
-        })
-    }
+    // if ($('.emailInput').length > 0) {
+    //     $(".emailInput").map(function () {
+    //         $(this).inputmask({
+    //             mask: "*{3,20}@*{3,20}.*{3,20}",
+    //             clearIncomplete: true
+    //         });
+    //     })
+    // }
 
     if ($('.btnTop').length > 0) {
         $(".btnTop").click(function (event) {
@@ -183,6 +183,7 @@ $(document).ready(function () {
             }
 
         });
+        
     }
 
     if ($('.btnDialog').length > 0) {

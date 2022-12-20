@@ -37,9 +37,22 @@ button {
 
 input,
 button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 0;
+    background: transparent;
 }
 
 .container {
@@ -56,7 +69,7 @@ button {
     flex-direction: column;
     z-index: 3;
     // background: url(../img/backpage.jpg)!important;
-    .back{
+    .back {
         position: absolute;
         left: 0;
         top: 0;
@@ -208,6 +221,7 @@ button {
         padding: 28px 35px 10px;
         .checkBlock {
             margin-top: 45px;
+            position: relative;
         }
     }
     .controls {
@@ -222,7 +236,8 @@ button {
 
 .checkBlock {
     input {
-        display: none;
+        opacity: 0;
+        position: absolute;
         &:checked {
             & + label {
                 &::after {
